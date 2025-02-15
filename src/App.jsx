@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import React from 'react';
 function App() {
-  const [count, setCount] = useState(0)
-
+  const name = "moheed dar"
+  let x = 20;
+  let y = 10;
+  function Fruit() {
+    return "apple"
+  }
+  function Sum() {
+    return "a is larger than b"
+  }
+  function Add(a, b) {
+    return a + b
+  }
+  function operation(a,b,oper){
+    if(oper=='+'){
+      return a+b;
+    }else if(oper=='-'){
+      return a-b;
+    }else{
+      return a*b
+    };
+  }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>{name} </h1>
+      <h1>the total marks are {x + y} </h1>
+      <h1>so the fruit name is {Fruit()}</h1>
+      <h3>so in my knowledge i thought that {Sum()}</h3>
+      <h1>Add result is {Add(24, 22)} </h1>
+      <h2>{operation(10,10,'')} </h2>
+    </div>
+  );
 }
-
-export default App
+export default App;
