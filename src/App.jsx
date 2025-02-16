@@ -1,18 +1,13 @@
 import {useState} from 'react';
 function App() {
-    const [count, setCount] = useState(0);
-    const add=()=>{
-      setCount(count+1)
-    }
-    const del=()=>{
-      setCount(count-1)
-    }
+    const [display,setDisplay] = useState(true)
   return (
     <>
-        <h1>State in Reactjs</h1>
-        <h1>{count} </h1>
-        <button onClick={add} >Add</button>
-        <button onClick={del} >Del</button>
+          <button className="  p-4 rounded-2xl bg-yellow-500 mx-auto text-black m-2 flex  justify-center border-2 border-black outline-double  hover:bg-green-600 hover:text-white "  onClick={()=>setDisplay(!display)} >Toggle</button>
+            
+          {
+            display?<div className="bg-green-500" ><h1  className="text-center text-black text-2xl">moheed dar</h1></div>:null
+          }
     </>
   );
 }
