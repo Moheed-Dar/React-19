@@ -1,14 +1,15 @@
 import {useState} from 'react';
 function App() {
-    const [fruit,setFruit] = useState('Grapes')
-    const handerfruit=()=>{
-      setFruit("orange")
+    const [count, setCount] = useState(0);
+    const add=()=>{
+      setCount(count+1)
     }
   return (
     <>
         <h1>State in Reactjs</h1>
-        <h1>{fruit} </h1>
-        <button onClick={handerfruit} >Change</button>
+        <h1>{count} </h1>
+        <button onClick={add} >Add</button>
+        <button onClick={()=>setCount(count-1)} >Del</button>
     </>
   );
 }
