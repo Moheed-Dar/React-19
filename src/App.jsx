@@ -2,105 +2,19 @@ import { useState } from "react";
 import User from "./User";
 
 function App() {
-  const userData = [
-    {
-      name: "moheed dar",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 10,
-    },
-    {
-      name: "noman khan",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 9,
-    },
-    {
-      name: "daod khan",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 11,
-    },
-    {
-      name: "shaheen",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 35,
-    },
-    {
-      name: "daod khan",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 11,
-    },
-    {
-      name: "shaheen",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 35,
-    },
-    {
-      name: "daod khan",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 11,
-    },
-    {
-      name: "shaheen",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 35,
-    },
-    {
-      name: "daod khan",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 11,
-    },
-    {
-      name: "shaheen",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 35,
-    },
-    {
-      name: "daod khan",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 11,
-    },
-    {
-      name: "shaheen",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 35,
-    },
-    {
-      name: "daod khan",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 11,
-    },
-    {
-      name: "shaheen",
-      session: "2021-2025",
-      department: "BSIT",
-      rollnum: 35,
-    },
-  ];
+  const [color, setColor] = useState("red")
 
   return (
     <>
-    <h1>reuse Component in loop</h1>
-
-      {
-        userData.map((user,dat)=>(
-          <div key={dat}>
-            <User   user={user} />
-          </div>
-        ))
-      }
-     
+    <h1>color changing Clock </h1>
+    <select onChange={(e)=>setColor(e.target.value)} >
+      <option value="red" >red</option>
+      <option value="blue" >blue</option>
+      <option value="orange" >orange</option>
+      <option value="green" >green</option>
+      
+    </select>
+     <User color={color} />
     </>
   );
 }
