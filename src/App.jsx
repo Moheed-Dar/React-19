@@ -2,19 +2,72 @@ import { useState } from "react";
 import User from "./User";
 
 function App() {
-  const [color, setColor] = useState("red")
-
+  const collageData = [
+    {
+      name: "Avicena science collage ",
+      city: "muzaffarabad",
+      student: [
+        { name: "moheed" },
+        { name: "danish" },
+        { name: "manzar" }
+      ]
+    },
+    {
+      name: "Avicena science collage ",
+      city: "muzaffarabad",
+      student: [
+        { name: "moheed" },
+        { name: "danish" },
+        { name: "manzar" }
+      ]
+    },
+    {
+      name: "Avicena science collage ",
+      city: "muzaffarabad",
+      student: [
+        { name: "moheed" },
+        { name: "danish" },
+        { name: "manzar" }
+      ]
+    },
+    {
+      name: "Avicena science collage ",
+      city: "muzaffarabad",
+      student: [
+        { name: "moheed" },
+        { name: "danish" },
+        { name: "manzar" }
+      ]
+    }
+  ]
   return (
     <>
-    <h1>color changing Clock </h1>
-    <select onChange={(e)=>setColor(e.target.value)} >
-      <option value="red" >red</option>
-      <option value="blue" >blue</option>
-      <option value="orange" >orange</option>
-      <option value="green" >green</option>
-      
-    </select>
-     <User color={color} />
+      <h1>color changing Clock </h1>
+      <br /><br />
+      {
+        collageData.map((collage, ind) => (
+          <div key={ind} className="h-screen" >
+            <ul className=" w-auto bg-slate-600 text-white  " >
+              <li>
+                Name:{collage.name}
+              </li>
+              <li>
+                city:{collage.city}
+              </li>
+              <li>
+                <h1>Students</h1>
+                {
+                  collage.student.map((student, indo) => (
+                    <ul key={indo}>
+                      <li>  {student.name}   </li>
+                    </ul>
+                  ))
+                }
+              </li>
+            </ul>
+          </div>
+        ))
+      }
     </>
   );
 }
