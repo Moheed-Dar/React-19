@@ -1,75 +1,26 @@
-import { useState } from "react";
-import User from "./User";
+import {useState,useEffect} from 'react'
 
 function App() {
-  const collageData = [
-    {
-      name: "Avicena science collage ",
-      city: "muzaffarabad",
-      student: [
-        { name: "moheed" },
-        { name: "danish" },
-        { name: "manzar" }
-      ]
-    },
-    {
-      name: "Avicena science collage ",
-      city: "muzaffarabad",
-      student: [
-        { name: "moheed" },
-        { name: "danish" },
-        { name: "manzar" }
-      ]
-    },
-    {
-      name: "Avicena science collage ",
-      city: "muzaffarabad",
-      student: [
-        { name: "moheed" },
-        { name: "danish" },
-        { name: "manzar" }
-      ]
-    },
-    {
-      name: "Avicena science collage ",
-      city: "muzaffarabad",
-      student: [
-        { name: "moheed" },
-        { name: "danish" },
-        { name: "manzar" }
-      ]
+    const [count, setCount] = useState(0)
+    const [data, setData] = useState(0)
+    useEffect(()=>{
+        datatye();
+        call();
+    },[count])
+    function datatye(){
+        console.log("updated data")
     }
-  ]
+    function call(){
+        console.log("call auto")
+    }
   return (
-    <>
-      <h1>color changing Clock </h1>
-      <br /><br />
-      {
-        collageData.map((collage, ind) => (
-          <div key={ind} className="h-screen" >
-            <ul className=" w-auto bg-slate-600 text-white  " >
-              <li>
-                Name:{collage.name}
-              </li>
-              <li>
-                city:{collage.city}
-              </li>
-              <li>
-                <h1>Students</h1>
-                {
-                  collage.student.map((student, indo) => (
-                    <ul key={indo}>
-                      <li>  {student.name}   </li>
-                    </ul>
-                  ))
-                }
-              </li>
-            </ul>
-          </div>
-        ))
-      }
-    </>
-  );
+    <div>
+        <h1>useEffect hooks in React-19</h1>
+        <h1>counter:{count} </h1>
+        <h2>data:{data} </h2>
+            <button  onClick={()=>setCount(count+1)} >Click</button>
+            <button  onClick={()=>setData(data+1)} >Click</button>
+    </div>
+  )
 }
-
-export default App;
+export default App
