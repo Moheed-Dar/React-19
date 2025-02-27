@@ -1,17 +1,24 @@
-import {useState} from 'react'
-import Counter from './Counter'
+import React from 'react'
+ import styled from 'styled-components'
 
 function App() {
-    const [count, setCount] = useState(0)
-    const [ display,setDisplay] = useState(true)
+    const Header = styled.h2({
+        color:'red',
+        border:'10px solid green ',
+        borderRadius:'10px'
+    })
+    const H1 = styled.h2`
+    color:orange;
+    background-color:black;
+    border:2px dotted red;
+    border-radius:10px;
+
+    `
+   
   return (
     <div>
-        {
-            display?<Counter counter={count}  ></Counter>:null
-        }
-    
-    <button  onClick={()=>setCount(count+1)} > Count</button>
-    <button onClick={()=>setDisplay(!display)} >Toggle</button>
+    <Header>moheed</Header>
+    <H1>Styled components </H1>
     </div>
   )
 }
