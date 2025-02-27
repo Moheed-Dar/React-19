@@ -1,13 +1,27 @@
 import {useEffect} from 'react'
 
 const Counter =({counter})=>{
-
+//mounting function 
     let handleFunction=()=>{
-        console.log("handle function")
+        console.log("mounting 1 ")
     }
-    
+
     useEffect(()=>{
         handleFunction();
+    },[])
+// updated function in react
+    let updateFunction=()=>{
+        console.log("updated function ")
+    }
+    useEffect(()=>{
+        updateFunction();
+    },[Counter])
+
+    //unmounting function in react 
+    useEffect(()=>{
+        return ()=>{
+            console.log("unmounted")
+        }
     },[])
     return(
         <div>
