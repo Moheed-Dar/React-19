@@ -8,8 +8,8 @@ function App() {
     }
     return (
         <div>
-             <User  ref={inputref}  />
-             <button onClick={handleinput}>Click</button>
+             <User  ref={inputref} handleinput={handleinput} />
+             
         </div>
     )
 }
