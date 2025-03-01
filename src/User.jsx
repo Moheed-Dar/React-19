@@ -1,12 +1,12 @@
-import React from 'react'
-
-function User({handleupdated,name,getdata}) {
-  return (
-    <div>
-        <button  onClick={()=>handleupdated(name)} >Updated</button>
-        <button  onClick={getdata} >Getdata</button>
-    </div>
-  )
-}
-
-export default User
+const User = (props) => {
+    return (
+      <div>
+        {/* Directly using props.ref */}
+        <input type="text" ref={props.ref} placeholder="Enter your text" />
+        
+      </div>
+    );
+  };
+  
+  export default User;
+  

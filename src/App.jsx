@@ -1,18 +1,15 @@
-import React from 'react'
+import {useRef} from 'react'
 import User from './User.jsx'
 function App() {
-    const handleupdated =(name)=>{
-        alert(name)
-    }
-    const getdata =()=>{
-        alert("this is getdata field in snd")
+    const inputref = useRef(null);
+    const handleinput=()=>{
+        inputref.current.focus();
+        inputref.current.value="hello"
     }
     return (
         <div>
-                <User  handleupdated={handleupdated}  name='moheed' getdata={getdata} />
-                <User  handleupdated={handleupdated}  name='saad' getdata={getdata} />
-                <User  handleupdated={handleupdated}  name='usman' getdata={getdata} />
-                <User  handleupdated={handleupdated}  name='zahid' getdata={getdata} />
+             <User  ref={inputref}  />
+             <button onClick={handleinput}>Click</button>
         </div>
     )
 }
